@@ -205,3 +205,38 @@ Alternatively, you could always `clone` and then `mv` the directory.
 
     $ git clone git@github.com:codeforamerica/skillshares.git
     $ mv skillshares Fred
+
+
+Stashing
+--------
+
+Another useful command is `git stash`. This lets you "save" changes,
+without really saving them.
+
+For instance, let's create a new file.
+
+    $ touch z.txt
+
+And, let's add it to our staging area.
+
+    $ git add --all
+
+Then, we remember that we don't really need that file right now, but we
+don't want to go ahead and create a new branch. It'd be nice to just put
+it somewhere before we're ready to continue.
+
+This is where `stash` comes in handy.
+
+    $ git stash
+
+Now we're back to the last commit, and the `f.txt` file is nowhere to be
+seen. But, we decide we probably want it back -- this is where `stash
+pop` can be used.
+
+    $ git stash pop
+
+And **boom**, we're back to having the `f.txt` file added to the current
+staging area. You can double check this by using the `status` command
+that we used earlier.
+
+    $ git status -sb
