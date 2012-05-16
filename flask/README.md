@@ -100,7 +100,7 @@ def home():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
 ```
 
 While Flask is not as pretty as Sinatra (at least, in my opinion), this
@@ -110,6 +110,13 @@ able to run the following command and then visit
 your "Hello, World!" message:
 
     $ python app.py
+
+### Restarting the app
+
+Everytime you make changes to the `app.py` file, it should reload since
+the app is being run with `debug` keyword. If it doesn't, you can
+shut down the app by hitting `Control-C` and then running `python
+app.py` again.
 
 
 Routing
@@ -143,7 +150,7 @@ def my_name(name):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
 ```
 
 Now, run `python app.py` again and visit the Code for America endpoint:
