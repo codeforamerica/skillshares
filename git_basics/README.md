@@ -286,7 +286,8 @@ do a `reset` with the `--hard` flag.
 
     $ git reset --hard HEAD~1
 
-Notice that we used the `HEAD~1` keyword rather than `HEAD^`. Also, by
+Notice that we used the `HEAD~1` keyword rather than `HEAD^` (if we
+wanted to go even further back, we could use a bigger number).  Also, by
 using the `--hard` flag, our commit and `f.txt` file should no longer
 exist. We can check this by checking the status and commit log.
 
