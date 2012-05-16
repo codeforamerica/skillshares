@@ -153,7 +153,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-Now, run `python app.py` again and visit the Code for America endpoint:
+Now, visit the Code for America endpoint:
 [`http://localhost:5000/cfa`](http://localhost:5000/cfa).
 
 Also, notice how the `/my/name/is` endpoint isn't static:
