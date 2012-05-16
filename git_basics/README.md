@@ -268,7 +268,7 @@ The `^` character is shorthand for "previous commit" -- if you want a
 more technical explanation, I'll be happy to explain it further. But,
 now let's check out status:
 
-   $ git status -sb
+    $ git status -sb
 
 Notice the question marks next to `f.txt`? This means the file is
 untracked, but the previous commit has been deleted. We've implicitly
