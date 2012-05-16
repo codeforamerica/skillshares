@@ -13,17 +13,7 @@ def home():
 
 @app.route('/cfa')
 def cfa():
-    return "Code for America"
-
-
-@app.route('/my/name/is/<name>')
-def my_name(name):
-    return name.title()
-
-
-@app.route('/my/favorite/number/is/<int:number>')
-def favorite_number(number):
-    return str(number)
+    return render_template('cfa.html')
 
 
 if __name__ == '__main__':

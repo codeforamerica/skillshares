@@ -295,3 +295,33 @@ if __name__ == '__main__':
 
 Go ahead and check out [`http://localhost:5000`](http://localhost:5000)
 now, you should see a `#bada55` element.
+
+We can also add to the `cfa.html` file.
+
+```html
+{% extends "base.html" %}
+
+{% block css %}
+  <style type="text/css">
+  h1{
+    color: blue;
+  }
+  </style>
+{% endblock %}
+
+{% block main %}
+  <h1>Code for America</h1>
+{% endblock %}
+```
+
+And then recreate the `/cfa` endpoint.
+
+```python
+@app.route('/cfa')
+def cfa():
+    return render_template('cfa.html')
+```
+
+Notice how the element on this page is blue, rather than `#bada55`. Each
+template file currently builds off of the `base.html` file, rather than
+each other.
