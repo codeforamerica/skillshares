@@ -158,3 +158,30 @@ Now, visit the Code for America endpoint:
 
 Also, notice how the `/my/name/is` endpoint isn't static:
 [`http://localhost:5000/my/name/is/zach`](http://localhost:5000/my/name/is/zach)
+
+### Variables
+
+Using variables with Flask's routing is pretty awesome -- this is how
+the previous `/my/name/is` endpoint worked.
+
+Let's create a route that displays our favorite number.
+
+```python
+@app.route('/my/favorite/number/is/<int:number>')
+def favorite_number(number):
+    return str(number)
+```
+
+Note that we specify the number is an integer, and then we return it in
+string form using the `str` function. If we didn't convert the number to
+a string, then we'd get an error page.
+
+It should also be noted that function names are completely arbitrary.
+So, if you don't feel like typing out `favorite_number`, you could type
+something as simple as `poop` and it'd still work.
+
+```python
+@app.route('/my/favorite/number/is/<int:number>')
+def poop(number):
+    return str(number)
+```

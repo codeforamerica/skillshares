@@ -21,5 +21,10 @@ def my_name(name):
     return name.title()
 
 
+@app.route('/my/favorite/number/is/<int:number>')
+def favorite_number(number):
+    return str(number)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
