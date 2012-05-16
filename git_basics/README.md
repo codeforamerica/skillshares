@@ -74,8 +74,8 @@ too](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
     commands like git merge and git revert.
 
 
-Branching Out
--------------
+Branching
+---------
 
 Our `letters` project is pretty cool so far, but what if we need to go
 off on a tangent. Maybe three letters doesn't feel like enough, but we
@@ -180,3 +180,28 @@ delete that.
 And, when we list out our branches, only two should appear now.
 
     $ git branch
+
+
+Cloning
+-------
+
+The `clone` command allows you to work on projects that are already up
+on the web (you'll mostly be using this with projects already up on
+Github).
+
+We don't necessarily need to use this command right now, but I'll go
+ahead and leave a quick example.
+
+    $ git clone git@github.com:codeforamerica/skillshares.git
+
+This would clone the work currently done in the [Code for America
+Skillshares repo](https://github.com/codeforamerica/skillshares) into a
+directory named `skillshares`. If we didn't want that name, and instead
+wanted a name like `Fred`, we could have run the following command:
+
+    $ git clone git@github.com:codeforamerica/skillshares.git Fred
+
+Alternatively, you could always `clone` and then `mv` the directory.
+
+    $ git clone git@github.com:codeforamerica/skillshares.git
+    $ mv skillshares Fred
