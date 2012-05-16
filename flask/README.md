@@ -110,3 +110,44 @@ able to run the following command and then visit
 your "Hello, World!" message:
 
     $ python app.py
+
+
+Routing
+-------
+
+One of Flask's strengths is the ability to create beautiful URLs, so
+let's go ahead and create a few routes for our site.
+
+```python
+"""
+My Flask website.
+"""
+
+from flask import Flask
+app = Flask(__name__)
+
+
+@app.route('/')
+def home():
+    return "Hello, World!"
+
+
+@app.route('/cfa')
+def cfa():
+    return "Code for America"
+
+
+@app.route('/my/name/is/<name>')
+def my_name(name):
+    return name.title()
+
+
+if __name__ == '__main__':
+    app.run()
+```
+
+Now, run `python app.py` again and visit the Code for America endpoint:
+[`http://localhost:5000/cfa`](http://localhost:5000/cfa).
+
+Also, notice how the `/my/name/is` endpoint isn't static:
+[`http://localhost:5000/my/name/is/zach`](http://localhost:5000/my/name/is/zach)
