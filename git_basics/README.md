@@ -215,7 +215,7 @@ without really saving them.
 
 For instance, let's create a new file.
 
-    $ touch z.txt
+    $ touch f.txt
 
 And, let's add it to our staging area.
 
@@ -240,3 +240,55 @@ staging area. You can double check this by using the `status` command
 that we used earlier.
 
     $ git status -sb
+
+
+Undo
+----
+
+Inevitably, you'll have to undo a previous commit. If it you haven't
+already pushed to a remote (such as Github, Heroku, etc.) then `reset`
+is probably the command you're looking for -- otherwise, you should
+use `revert`.
+
+With `reset`, you can delete a commit and keep the changes with the
+`--soft` command. Alternatively, you can use the `--hard` flag to delete
+a commit and delete the changes, as well.
+
+Let's go ahead and commit the `f.txt` file, then play around with the
+`reset` and `revert` commands.
+
+    $ git status -sb
+    $ git commit -m "Add f.txt file"
+
+Now that we've made our commit, let's undo it.
+
+    $ git reset HEAD^
+
+The `^` character is shorthand for "previous commit" -- if you want a
+more technical explanation, I'll be happy to explain it further. But,
+now let's check out status:
+
+   $ git status -sb
+
+Notice the question marks next to `f.txt`? This means the file is
+untracked, but the previous commit has been deleted. We've implicitly
+used the `--soft` flag (our commit was deleted, but the files stayed the
+same).
+
+Let's go ahead and commit the file again.
+
+    $ git add --all
+    $ git commit -m "Add f.txt file"
+
+Now, since we haven't pushed this code to a remote (such as Github or
+Heroku), and we really don't want the `f.txt` file, let's go ahead and
+do a `reset` with the `--hard` flag.
+
+    $ git reset --hard HEAD~1
+
+Notice that we used the `HEAD~1` keyword rather than `HEAD^`. Also, by
+using the `--hard` flag, our commit and `f.txt` file should no longer
+exist. We can check this by checking the status and commit log.
+
+    $ git status -sb
+    $ git log
