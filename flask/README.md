@@ -118,6 +118,13 @@ the app is being run with `debug` keyword. If it doesn't, you can
 shut down the app by hitting `Control-C` and then running `python
 app.py` again.
 
+### Commit changes
+
+Now that our small app is working, we should make our first commit.
+
+    $ git add -A
+    $ git commit -m "First commit"
+
 
 Routing
 -------
@@ -185,3 +192,23 @@ something as simple as `poop` and it'd still work.
 def poop(number):
     return str(number)
 ```
+
+
+Git
+---
+
+It's important to note that we should be committing code fairly
+regularly. This way, in case anything blows up, we can always revert to
+a previous state. `git` also allows use to go off on tangents with
+branches and just try things out (without messing up the master branch).
+
+So, with that in mind, let's commit what we have so far.
+
+    $ git commit -am "Add routes"
+
+The `a` flag allows you to add all changes to **already tracked files**
+and the `m` flag allows you to follow the commit with a message. This is
+basically shorthand way to write:
+
+    $ git add -A
+    $ git commit -m "Add routes"
