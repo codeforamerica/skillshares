@@ -293,3 +293,21 @@ exist. We can check this by checking the status and commit log.
 
     $ git status -sb
     $ git log
+
+### Undo a reset
+
+Is it possible to undo a reset? Yes. Yes, it is.
+
+In order to do this, we'll need to use the `reflog` command to list out
+the [previous states our `HEAD` has been
+in](http://www.youtube.com/watch?v=a4hFwJm41h4).
+
+    $ git reflog
+
+Your previous commit "Add f.txt" file should be at `HEAD@{1}`. If it is,
+run the following to undo your undo:
+
+    $ git reset --hard HEAD@{1}
+
+Notice the subtle irony of using a `reset --hard` command to undo a
+`reset --hard` command.
