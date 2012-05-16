@@ -1,4 +1,4 @@
 Skillshares
 ===========
 
-A collection of internal Code for America Skillshare notes.
+A collection of notes for internal Code for America Skillshares.
