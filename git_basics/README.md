@@ -27,11 +27,17 @@ project and wanted to add wings to it, you could do so by setting up a
 to a `commit` where the car previously worked perfectly.
 
 
+Installation
+------------
+
+Git can easily be installed from [the official website](http://git-scm.com/).
+
+
 Git Started
 -----------
 
 If you've never created a Git repository before, then let's start from
-there on the command line.
+there on the command line (your computer's Terminal on Mac OS X).
 
 First, we'll create a new project.
 
