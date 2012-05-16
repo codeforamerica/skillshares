@@ -210,3 +210,88 @@ basically shorthand way to write:
 
     $ git add -A
     $ git commit -m "Add routes"
+
+
+Templating
+----------
+
+While Flask's routing alone is pretty useful, templating makes it
+awesome -- especially since it uses the [Jinja template
+engine](http://jinja.pocoo.org/docs/).
+
+To start using templates, let's create a `templates` directory to store
+them.
+
+    $ mkdir templates
+    $ (cd templates && touch {base,home,cfa}.html)
+
+There should now be three template files in the directory. Also, notice
+that by using the `cd` command inside parentheses (it creates a
+subshell), we never have to `cd` back a level. And, lastly, the `&&`
+inside the command basically executes as "if the last thing worked out,
+now do this."
+
+Now, let's start adding content to the `base.html` file.
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}My Site{% endblock %}</title>
+  {% block css %}{% endblock %}
+</head>
+
+<body>
+  {% block main %}{% endblock %}
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  {% block js %}{% endblock %}
+</body>
+</html>
+```
+
+Notice the `block` statements. These allow us to extend the `base.html`
+file with further content in specific areas. Let's add content to the
+`home.html` file and then modify our `app.py` file.
+
+```html
+{% extends "base.html" %}
+
+{% block css %}
+  <style type="text/css">
+  h1{
+    color: #bada55;
+  }
+  </style>
+{% endblock %}
+
+{% block main %}
+  <h1>Hello, World!</h1>
+{% endblock %}
+```
+
+And we can modify the `app.py` file to now point to our `home.html`
+file:
+
+```python
+"""
+My Flask website.
+"""
+
+from flask import Flask, render_template
+app = Flask(__name__)
+
+
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+Go ahead and check out [`http://localhost:5000`](http://localhost:5000)
+now, you should see a `#bada55` element.

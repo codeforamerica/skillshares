@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}My Site{% endblock %}</title>
+  {% block css %}{% endblock %}
+</head>
+
+<body>
+  {% block main %}{% endblock %}
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  {% block js %}{% endblock %}
+</body>
+</html>
