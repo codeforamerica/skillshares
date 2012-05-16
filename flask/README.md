@@ -193,9 +193,7 @@ def poop(number):
     return str(number)
 ```
 
-
-Git
----
+### git
 
 It's important to note that we should be committing code fairly
 regularly. This way, in case anything blows up, we can always revert to
