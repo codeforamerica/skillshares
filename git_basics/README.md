@@ -248,9 +248,11 @@ that we used earlier.
 Lastly, I just want to note, while `stash` is a pretty useful command,
 it's also a little dangerous if you mess up your workflow with it. As
 for day-to-day working heuristics, I'd advocate creating a one-off
-branch rather than relying on `stash`. Remember: branches are completely
-free and easy to use, so rely on them when working on commits and ideas
-that might never make it back to the `master` branch.
+branch rather than relying on `stash`.
+
+**Remember**: branches are completely free and easy to use, so rely on
+them when working on commits and ideas that might never make it back to
+the `master` branch.
 
 
 Undo
@@ -350,10 +352,10 @@ flags, as well.
 
     $ git log --oneline --graph --decorate
 
-Notice the SHA hashes next to our commit messages whenever we run `git
-log --oneline`? We can use those to `revert` certain commits. So, copy
-or keep in mind one of those SHA hashes (for the sake of this README,
-mine will be `abc123`) and get ready to `revert` it.
+Notice the SHA hashes next to our commit messages whenever we run the
+`git log --oneline` command? We can use those to `revert` certain
+commits. So, copy or keep in mind one of those SHA hashes (for the sake
+of this README, mine will be `abc123`) and get ready to `revert` it.
 
     $ git revert abc123
 
