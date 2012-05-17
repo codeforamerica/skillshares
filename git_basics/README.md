@@ -46,7 +46,7 @@ Git Started
 -----------
 
 If you've never created a Git repository before, then let's start from
-there on the command line (your computer's Terminal on Mac OS X).
+the command line (your computer's Terminal on Mac OS X).
 
 First, we'll create a new project.
 
