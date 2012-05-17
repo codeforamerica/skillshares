@@ -501,3 +501,18 @@ has an [awesome repo](https://github.com/github/gitignore) of all kinds
 of `.gitignore` files, and I keep [my personal one
 online](https://github.com/zachwill/dotfiles/blob/master/.gitignore_global),
 too.
+
+Also, `.gitignore` files can be added on a per project basis, too. For
+instance, the `.gitignore` file in this repo will ignore any files with
+the `.zach` extension.
+
+### Aliases
+
+I've saved the best news for last. Customized Git commands tend to get a
+bit on the verbose side, which is why Git aliases are so badass. For
+example, instead of always having to type out `git add --all`, we can
+add an alias to have `git aa` accomplish the same task.
+
+All aliases should be saved to your `.gitconfig` file. For an example of
+aliases I regularly use, check out [my `.gitconfig`
+file](https://github.com/zachwill/dotfiles/blob/master/.gitconfig).
