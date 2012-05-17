@@ -145,8 +145,7 @@ second commit.
 
 We don't want to lose our progress by making the `f.md` file, though.
 So, let's go ahead and create another branch (in fact, you should think
-of branches as completely free -- feel free to make as many as you'd
-like).
+of branches as completely free -- make as many as you'd like).
 
     $ git checkout -b markdown
 
