@@ -139,7 +139,7 @@ So, let's go ahead and create another branch (in fact, you should think
 of branches as completely free -- feel free to make as many as you'd
 like).
 
-    $ git checkout -b "markdown"
+    $ git checkout -b markdown
 
 Now that we're in the `markdown` branch, let's add the `f.md` file to
 staging.
