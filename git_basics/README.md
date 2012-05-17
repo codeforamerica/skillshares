@@ -434,8 +434,7 @@ comes in handy.
 
     $ git push --force origin
 
-Pull
-----
+### Pull
 
 If you've ever used remotes with other individuals before, you've
 probably used the `pull` command. The `pull` command performs a `fetch`
