@@ -161,6 +161,10 @@ In order to switch, we need to use the `checkout` command.
 
     $ git checkout more
 
+Now, we can list the files in this current branch.
+
+    $ ls -l
+
 This commit looks good (notice that the `f.md` file no longer exists in
 this branch), so let's go ahead and `merge` it with the `master` branch.
 
@@ -240,6 +244,13 @@ staging area. You can double check this by using the `status` command
 that we used earlier.
 
     $ git status -sb
+
+Lastly, I just want to note, while `stash` is a pretty useful command,
+it's also a little dangerous if you mess up your workflow with it. As
+for day-to-day working heuristics, I'd advocate creating a one-off
+branch rather than relying on `stash`. Remember: branches are completely
+free and easy to use, so rely on them when working on commits and ideas
+that might never make it back to the `master` branch.
 
 
 Undo
@@ -360,3 +371,7 @@ just happen automatically.
 
 And, with that, you're now a Git ninja at undoing commits with both
 `reset` and `revert`.
+
+
+Remotes
+-------
