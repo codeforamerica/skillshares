@@ -420,3 +420,34 @@ We could easily `push` a different branch up to that remote, too --
 which is actually how you get multiple branches listed on Github.
 
     $ git push origin markdown
+
+Also, once you've pushed a branch to a remote, you'll now be able to
+simply write out `git push origin` without naming the branch.
+
+### Force
+
+Sometimes, you might have to force a conflicting `push` to a remote.
+This is almost never wise, and you should consult the
+[documentation](http://git-scm.com/docs/git-push) before deciding to do
+so. But, in the case that you do actually need to, the `--force` command
+comes in handy.
+
+    $ git push --force origin
+
+Pull
+----
+
+If you've ever used remotes with other individuals before, you've
+probably used the `pull` command. The `pull` command performs a `fetch`
+and `merge` in one go (you basically use it to grab changes that have
+been performed by a `push` to a remote).
+
+    $ git pull
+
+You might encounter conflicts when using the `pull` command. This
+basically means more than two people have modified a file, and Git is
+unsure about which changes should stay and which should be deleted.
+
+If you have a particulary nasty merge conflict, it's probably best to
+consult the [Git documentation](http://git-scm.com/docs/git-pull) (it's
+basically a problem you're going to have to work through).
