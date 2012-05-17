@@ -311,3 +311,52 @@ run the following to undo your undo:
 
 Notice the subtle irony of using a `reset --hard` command to undo a
 `reset --hard` command.
+
+### Revert
+
+While the `reset` command is awesome for erasing up to a certain point
+in time, it comes with two shortfalls: you **should not use it** for
+commits that have already been pushed to a remote (this will cause you
+pain -- you've been forewarned), and it can't let you undo certain
+commits and leave others unchanged.
+
+This is where `revert` comes in. With the `revert` command, you can
+cherry pick commits that have already been pushed up to a remote (and it
+won't explode in your face for doing so).
+
+With that in mind, let's get our current `log` to double check the
+`f.txt` file has indeed been committed.
+
+    $ git log
+
+For an easier to read `log` of past commits, add the `--oneline`
+flag.
+
+    $ git log --oneline
+
+And, if you're feeling festive, add the `--graph` and `--decorate`
+flags, as well.
+
+    $ git log --oneline --graph --decorate
+
+Notice the SHA hashes next to our commit messages whenever we run `git
+log --oneline`? We can use those to `revert` certain commits. So, copy
+or keep in mind one of those SHA hashes (for the sake of this README,
+mine will be `abc123`) and get ready to `revert` it.
+
+    $ git revert abc123
+
+That commit has now been undone (though it stays in our history), and a
+`revert` commit has also been added. You'll have to save a revert
+message in your text editor, as well.
+
+Let's take this to a meta-level now, and `revert` that `revert` (I'll
+use the SHA hash `xyz789` for the sake of this README). Also, let's
+specify that we don't want to save the commit message -- that should
+just happen automatically.
+
+    $ git log --oneline
+    $ git revert --no-edit xyz789
+
+And, with that, you're now a Git ninja at undoing commits with both
+`reset` and `revert`.
