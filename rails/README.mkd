@@ -1,0 +1,5 @@
+### Ruby on Rails
+
+#Setup your Ruby Environment
+
+Check out this [repo](https://github.com/codeforamerica/cfa_laptop) on how to get setup
