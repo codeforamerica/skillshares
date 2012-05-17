@@ -470,9 +470,9 @@ set up, then we need to go ahead and do that.
     $ cd
 
 You should now be in your home directory. To get the name of this
-location, copy the output from the following command:
+location, we'll `pbcopy` the output from the following command:
 
-    $ echo $PWD
+    $ echo $PWD | pbcopy
 
 Let's check to make sure that a `.gitconfig` file exists.
 
@@ -502,8 +502,9 @@ online](https://github.com/zachwill/dotfiles/blob/master/.gitignore_global),
 too.
 
 You should adjust the `excludesfile` to point to your own global
-`.gitignore` file, and you've already copied the path with the `echo
-$PWD` command.
+`.gitignore`, and you've already copied the path with the `echo
+$PWD | pbcopy` command (so just paste and append the name of your global
+`.gitignore` file).
 
 Also, `.gitignore` files can be added on a per project basis, too. For
 instance, the `.gitignore` file in this repo will ignore any files with
