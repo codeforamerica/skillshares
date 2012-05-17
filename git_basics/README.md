@@ -377,3 +377,37 @@ And, with that, you're now a Git ninja at undoing commits with both
 
 Remotes
 -------
+
+Remotes are an awesome feature of Git (and you'll use them quite often
+with services like Github and Heroku). It's hard to believe that the
+distributed workflow allowed by Git wasn't possible before a couple
+years ago.
+
+If you think of Git as a way to save your code and progress at certain
+points in time, then remotes are just different locations for that code
+-- you've probably already internalized this by using Github.
+
+You can add remotes with the `remote` command. Most of the time you
+won't actually be typing this out (for instance, I always just copy and
+paste from Github when creating a new repository).
+
+But, with that said, here's a quick example of creating a remote named
+`origin`. Why the `origin` name? It's just a heuristic and best practice
+to name the remote you'll be pushing to most frequently as `origin`. For
+all Git cares, you could name it `poop` and everything would work as
+expected.
+
+    $ git remote add origin git@github.com:codeforamerica/skillshares.git
+
+Now that the remote has been added to our Git repository, we can `push`
+code up to it.
+
+    $ git push origin master
+
+Basically, what this command says is push the `master` branch of my
+project up to the `origin` remote.
+
+We could easily `push` a different branch up to that remote, too --
+which is actually how you get multiple branches listed on Github.
+
+    $ git push origin markdown
