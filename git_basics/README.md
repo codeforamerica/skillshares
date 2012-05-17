@@ -12,6 +12,15 @@ documentation](http://git-scm.com/documentation), and browsing through
 Chacon's [Pro Git book](http://git-scm.com/book). Remember, [Stack
 Overflow](http://stackoverflow.com/tags/git/) is your friend, as well.
 
+### Simplified
+
+Also, note that the Git basics in this Skillshare will be given at a
+somewhat simplified level. Some of what is said might be slightly
+incorrect, but the intent is not to be 100% textbook accurate in
+descriptions and explanations. Ease of use and rememberance is my main
+goal, and [painting bike sheds](http://blue.bikeshed.org/) is furthest
+from what I'm trying to accomplish.
+
 
 What is Git?
 ------------
