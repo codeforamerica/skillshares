@@ -2,7 +2,7 @@ Git Basics
 ==========
 
 A basic overview of [Git](http://git-scm.com) accompanied by some tips,
-tricks, and opinions on workflow for using it each day. This is no way
+tricks, and opinions on workflow for using it each day. This in no way
 attempts to be a complete guide, just a simple set of heuristics to help
 out beginners new to Git.
 
