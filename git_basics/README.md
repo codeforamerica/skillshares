@@ -87,7 +87,7 @@ Branching
 ---------
 
 Our `letters` project is pretty cool so far, but what if we need to go
-off on a tangent. Maybe three letters doesn't feel like enough, but we
+off on a tangent? Maybe three letters doesn't feel like enough, but we
 don't want to screw up our current progress.
 
 This is where branches come in handy. Let's create a new branch and add
@@ -259,7 +259,7 @@ it's also a little dangerous if you mess up your workflow with it. As
 for day-to-day working heuristics, I'd advocate creating a one-off
 branch rather than relying on `stash`.
 
-**Remember**: branches are completely free and easy to use, so rely on
+**Remember**: branches are completely free and easy-to-use, so rely on
 them when working on commits and ideas that might never make it back to
 the `master` branch.
 
