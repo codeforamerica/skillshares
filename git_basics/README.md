@@ -450,3 +450,54 @@ unsure about which changes should stay and which should be deleted.
 If you have a particulary nasty merge conflict, it's probably best to
 consult the [Git documentation](http://git-scm.com/docs/git-pull) (it's
 basically a problem you're going to have to work through).
+
+
+Tips and Tricks
+---------------
+
+I feel the best way to round out this Skillshare is with a few tips and
+tricks -- especially when it comes to ignoring certain file types and
+setting up easy-to-use Git aliases.
+
+### Ignore
+
+Git is awesome at keeping track of files and changes, but sometimes you
+want to blatantly ignore certain filetypes (`.DS_Store`, `.pyc`, etc.)
+across all projects.
+
+If you don't already have a global `.gitignore` and `.gitconfig` file
+set up, then we need to go ahead and do that.
+
+    $ cd
+
+You should now be in your home directory. To get the name of this
+location, copy the output from the following command:
+
+    $ echo $PWD
+
+Let's check to make sure that a `.gitconfig` file exists.
+
+    $ cat .gitconfig
+
+If you get an error, then we need to create a `.gitconfig` file to look
+like the following (though yours will be slightly different):
+
+    [user]
+      name = Zach Williams
+      email = hey@zachwill.com
+    [core]
+      editor = vim
+      excludesfile = /Users/zachwill/.gitignore_global
+      quotepath = false
+    [color]
+      diff = auto
+      status = auto
+    [github]
+      user = zachwill
+
+Notice the `excludesfile` line? This points to my global `.gitignore`
+that lists filetypes and directories Git should always ignore. Github
+has an [awesome repo](https://github.com/github/gitignore) of all kinds
+of `.gitignore` files, and I keep [my personal one
+online](https://github.com/zachwill/dotfiles/blob/master/.gitignore_global),
+too.
