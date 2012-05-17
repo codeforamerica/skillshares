@@ -502,6 +502,10 @@ of `.gitignore` files, and I keep [my personal one
 online](https://github.com/zachwill/dotfiles/blob/master/.gitignore_global),
 too.
 
+You should adjust the `excludesfile` to point to your own global
+`.gitignore` file, and you've already copied the path with the `echo
+$PWD` command.
+
 Also, `.gitignore` files can be added on a per project basis, too. For
 instance, the `.gitignore` file in this repo will ignore any files with
 the `.zach` extension.
