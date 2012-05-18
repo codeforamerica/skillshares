@@ -385,13 +385,13 @@ And, with that, you're now a Git ninja at undoing commits with both
 ### Ammend
 
 Sometimes when commiting you need to modify the last commit message.
-This is where the '--ammend' command comes in handy.
+This is where the `--ammend` command comes in handy.
 
-Let's say you are ready to commit your code and run
+Let's say you are ready to commit your code and run:
 
     $ git commit -m "I <# Code for America"
 
-But you really meant to say "I heart Code for America"
+But you really meant to say "I heart Code for America":
 
     $ git commit --ammend
 
