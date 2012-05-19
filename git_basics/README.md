@@ -382,10 +382,10 @@ just happen automatically.
 And, with that, you're now a Git ninja at undoing commits with both
 `reset` and `revert`.
 
-### Ammend
+### Amend
 
 Sometimes when commiting you need to modify the last commit message.
-This is where the `--ammend` command comes in handy.
+This is where the `--amend` command comes in handy.
 
 Let's say you are ready to commit your code and run:
 
@@ -393,7 +393,7 @@ Let's say you are ready to commit your code and run:
 
 But you really meant to say "I heart Code for America":
 
-    $ git commit --ammend
+    $ git commit --amend
 
 Then correct your commit message.
 
