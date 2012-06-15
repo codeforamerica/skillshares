@@ -166,7 +166,7 @@ in your browser.
 
 The first site we'll make should look like the following.
 
-![]()
+![](https://github.com/codeforamerica/skillshares/raw/master/bootstrap/site.png)
 
 Notice how it naturally is divided into three sections (red, green, blue),
 with distinct columns in each? That should make it pretty easy to
