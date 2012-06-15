@@ -205,9 +205,33 @@ our updated meta level for red should actually look like this:
             └── image
 ```
 
-Now, I'm going to introduce a simple rule: a `row` has to be held in a
+Now, I'm going to introduce a simple rule: each `row` has a width of 12
+units, and those columns need to total up to (or be less than) 12.
+
+So, our meta level will need to be updated once more:
+
+```
+├── red
+    └── row
+        └── column6
+            └── text
+        └── column6
+            └── image
+```
+
+Lastly, I'm going to add another rule: a `row` has to be held in a
 `container`. Not every `row` has to have its own `container`, but there
 does need to be at least one.
+
+There are now two ways to go forward: **fluid** and **regular**.
+
+### Fluid
+
+Making our web page fluid can help reduce the amount of `div` elements
+we'll have to use in order to achieve the desired effect of having
+full-screen backgrounds.
+
+### Regular
 
 Couldn't that `container` just be the `section`? **Nope**. Notice how the
 color covers the entire page width in the picture? `Containers` aren't
@@ -223,21 +247,6 @@ So, the updated meta level should look like:
             └── column
                 └── text
             └── column
-                └── image
-```
-
-Lastly, I'm going to add another rule: each `row` has a width of 12
-units, and those columns need to total up to (or be less than) 12.
-
-So, our meta level will need to be updated once more:
-
-```
-├── red
-    └── container
-        └── row
-            └── column6
-                └── text
-            └── column6
                 └── image
 ```
 
