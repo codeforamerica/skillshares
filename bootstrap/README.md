@@ -137,3 +137,127 @@ that looks like this:
   </div>
 </section>
 ```
+
+
+Code
+----
+
+The best way to go from here is probably by writing some code. I've
+included a boilerplate `index.html` file that marks where your content
+should go. We can also create a simple server for our project with the
+following command:
+
+```
+python -m SimpleHTTPServer 5555
+```
+
+You should then be able to visit [`http://localhost:5555/`]() in your
+browser.
+
+### First Site
+
+The first site we'll make should look like the following.
+
+![]()
+
+Notice how it naturally is divided into three sections (red, green, blue),
+with distinct columns in each? That should make it pretty easy to
+code in Bootstrap (notice it does look rectangular).
+
+At a meta level, our markup should look something like this.
+
+```
+├── red
+    └── column
+        └── text
+    └── column
+        └── image
+
+├── green
+    └── column
+        └── image + text
+    └── column
+        └── image + text
+    └── column
+        └── image + text
+
+└── blue
+    └── column
+        └── image
+    └── column
+        └── text
+```
+
+It's easy to begin to turn this into HTML. Each of those top levels will
+become a `<section>`. But, what about the columns?
+
+Well, looking at the picture again, each of the sections does have
+different column layouts (or intends to), but the columns in each
+section are in a single `row` (just trust me if you're skeptical). So,
+our updated meta level for red should actually look like this:
+
+```
+├── red
+    └── row
+        └── column
+            └── text
+        └── column
+            └── image
+```
+
+Now, I'm going to introduce a simple rule: a `row` has to be held in a
+`container`. Not every `row` has to have its own `container`, but there
+does need to be at least one.
+
+Couldn't that `container` just be the `section`? **Nope**. Notice how the
+color covers the entire page width in the picture? `Containers` aren't
+allowed to be the full width of the page -- in fact, they help constrain
+the content when it comes to our page being responsive.
+
+So, the updated meta level should look like:
+
+```
+├── red
+    └── container
+        └── row
+            └── column
+                └── text
+            └── column
+                └── image
+```
+
+Lastly, I'm going to add another rule: each `row` has a width of 12
+units, and those columns need to total up to (or be less than) 12.
+
+So, our meta level will need to be updated once more:
+
+```
+├── red
+    └── container
+        └── row
+            └── column6
+                └── text
+            └── column6
+                └── image
+```
+
+It's pretty easy to turn that into the correct Bootstrap markup:
+
+```html
+<section class="red">
+  <div class="container">
+
+    <div class="row">
+      <div class="span6">
+        <p>Lorem ipsum text.</p>
+      </div>
+      <div class="span6">
+        <img src="http://placehold.it/600x400" />
+      </div>
+    </div>
+
+  </div>
+</section>
+```
+
+Try writing the `blue` and `green` ones on your own.
