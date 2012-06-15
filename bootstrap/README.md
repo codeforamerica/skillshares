@@ -239,22 +239,49 @@ Making our web page fluid can help reduce the amount of `div` elements
 we'll have to use in order to achieve the desired effect of having
 full-screen backgrounds.
 
+We could actually turn our meta markup into actual markup:
+
+```html
+<section class="red container-fluid">
+  <div class="row-fluid">
+    <div class="span6">
+      <p>Lorem ipsum text.</p>
+    </div>
+    <div class="span6">
+      <img src="http://placehold.it/600x400" />
+    </div>
+  </div>
+</section>
+```
+
+Creating our website using `container-fluid` and `row-fluid` classes
+allows our sections and columns to resize, well, fluidly. Check it out
+[in your browser](http://localhost:5555) with the following styles:
+
+```css
+.red {
+    background: red;
+}
+```
+
 ### Regular
 
-Couldn't that `container` just be the `section`? **Nope**. Notice how the
-color covers the entire page width in the picture? `Containers` aren't
-allowed to be the full width of the page -- in fact, they help constrain
-the content when it comes to our page being responsive.
+If we don't use the `container-fluid` and `row-fluid` classes, this
+causes our markup to resize in more of a "snapping" motion -- which you
+might like or hate. In order to achieve this, you will have to add more
+`div` elements, though.
 
-So, the updated meta level should look like:
+Remember how the `container` class double with the `section` element? If
+we code our markup without the `fluid` classes, that can no longer
+happen -- which results in meta HTML that looks like this:
 
 ```
 ├── red
     └── container
         └── row
-            └── column
+            └── column6
                 └── text
-            └── column
+            └── column6
                 └── image
 ```
 
